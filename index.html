@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="app1">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/test.js"></script>
+<body>
+
+<div ng-controller="todolist">
+    <h1>{{title}}</h1>
+    <p>
+    <ul>
+        <li ng-repeat="todo in list">
+            <button ng-click="moveUp($index)">^</button>
+            <button ng-click="moveDown($index)">v</button>
+            <input type="checkbox" ng-model="todo.selected" />{{todo.task}}
+        </li>
+    </ul>
+    </p>
+    <span><input type="text" ng-model="newTask" placeholder="New Task" /> </span>
+    <span><button ng-click="addTask()">Add Task</button> </span>
+    <br>
+    <span><button ng-click="selectAll()">Select All</button></span>
+    <span><button ng-click="unselectAll()">Unselect All</button></span>
+    <span><button ng-click="clearSelected()">Clear Selected Tasks</button></span>
+</div>
+
+</body>
+</html>
